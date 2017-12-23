@@ -16,6 +16,16 @@ function CompareForSort(first, second)
     return 1; 
   else  
     return -1;
+}
+
+function CompareForSortObj(first, second)  
+{  
+  if (first['median'] == second['median'])
+    return 0; 
+  if (first['median'] < second['median']) 
+    return 1; 
+  else  
+    return -1;
 } 
 
 csv()
@@ -80,7 +90,9 @@ csv()
       finalObjArray.push(el);
     }
   })
-  // console.log(outputArray);
+  
+  finalObjArray.sort(CompareForSortObj);
+  
   console.log(finalObjArray);
   console.log('end');
 });
